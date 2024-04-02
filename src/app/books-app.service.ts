@@ -14,4 +14,8 @@ export class BooksAppService {
   getData():Observable<any>{
    return this._httpClient.get(this.url)
   }
+
+  sortTitle(column:string, order:string):Observable<any>{
+    return this._httpClient.get("https://s3.amazonaws.com/api-fun/books.json?sortBy="+column+"&order="+order)
+  }
 }

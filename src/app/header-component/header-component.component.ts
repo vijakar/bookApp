@@ -9,7 +9,9 @@ import { BooksAppService } from '../books-app.service';
 export class HeaderComponentComponent {
 
   public booksData:any=[]
-
+public isSort: boolean=false;
+public order:string=''
+public column:string='title'
   constructor(private _booksAppService:BooksAppService){
     this._booksAppService.getData().subscribe(
       (data:any)=>{
@@ -19,6 +21,24 @@ export class HeaderComponentComponent {
         alert('Getting Data failed')
       }
     )
+  }
+
+  sortByTitle(){
+
+    alert("srt")
+    if(this.isSort){
+      this.order="asc"
+    }else{
+      this.order='desc'
+    }
+    this._booksAppService.sortTitle(this.column, this.order).subscribe(
+      (data:any)=>{
+        this.booksData=data;
+      },(err:any)=>{
+        alert("sorted failed")
+      }
+    )
+
   }
 
 }

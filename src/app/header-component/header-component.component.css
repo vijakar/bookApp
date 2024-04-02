@@ -1,7 +1,6 @@
 .header-container{
     width: 85vw;
     background-color: blue;
-    
     padding: 30px 50px;
     border-radius: 5px;
 }
@@ -20,6 +19,7 @@
     font-size: 13px;
     margin-bottom: 25px;
 }
+
 .sort-btn{
     width:150px;
     padding:5px 0px;

@@ -1,1 +1,15 @@
-
+<div class="card-container">
+    <div class="card"  *ngFor="let book of booksData.data.books">
+        <div class="select">
+        <select name="Actions" id="">
+            <option value="Actions">Actions</option>
+            <option value="edit">Edit</option>
+            <option value="delete">Delete</option>
+        </select>
+    </div>
+        <img src={{book.imageUrl}} alt="">
+        <p class="title">{{book.title}}</p>
+        <p class="year"><i class="fa-solid fa-calendar-days"></i> {{book.PublishDate}}</p>
+    <a class="btn btn-primary link-btn" href={{book.purchaseLink}}>Buy Now</a>
+    </div>
+</div>
